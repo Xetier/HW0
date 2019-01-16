@@ -132,6 +132,7 @@ namespace SingIn
 
             var Name = _driver.FindElement(By.ClassName("account"));
             var Logout = _driver.FindElement(By.ClassName("logout"));
+
             Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
 
             if (Name.Text.Equals("FirstName LastName") &&

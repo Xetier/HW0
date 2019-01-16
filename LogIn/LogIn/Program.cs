@@ -35,13 +35,18 @@ namespace LogIn
             var Name = _driver.FindElement(By.ClassName("account"));
             var Logout = _driver.FindElement(By.ClassName("logout"));
 
+            Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
+
             if (Name.Text.Equals("FirstName LastName") &&
                 _driver.Url.Equals("http://automationpractice.com/index.php?controller=my-account") &&
                 Logout.Text.Equals("Sign out"))
             {
-                Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
                 //Cambiar lugar de screenshots 
                 screenshot.SaveAsFile("C:\\PitDevelop\\C#\\HW0\\HW0\\LogIn\\Screenshot\\LogIn.jpg");
+            }
+            else
+            {
+                screenshot.SaveAsFile("C:\\PitDevelop\\C#\\HW0\\HW0\\SingIn\\Screenshot\\FAILLogIn.jpg");
             }
         }
     }
