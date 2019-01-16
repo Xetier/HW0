@@ -135,7 +135,7 @@ namespace SingIn
 
             if (Name.Text.Equals("FirstName LastName") &&
                 _driver.Url.Equals("http://automationpractice.com/index.php?controller=my-account") &&
-                 Logout.Text.Equals("Sign out"))
+                Logout.Text.Equals("Sign out"))
             {
                 Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
                 //Cambiar lugar de screenshots 
