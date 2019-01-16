@@ -27,7 +27,7 @@ namespace SingIn
 
             var txtEmailCreate = _driver.FindElement(By.Id("email_create"));
             txtEmailCreate.Clear();
-            txtEmailCreate.SendKeys("email12@mail.com");
+            txtEmailCreate.SendKeys("email123@mail.com");
 
             var btnCreateAccount = _driver.FindElement(By.Id("SubmitCreate"));
             Console.WriteLine(btnCreateAccount.Text);
@@ -139,7 +139,7 @@ namespace SingIn
             {
                 Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
                 //Cambiar lugar de screenshots 
-                screenshot.SaveAsFile("C:\\PitDevelop\\C#\\HW0\\HW0\\SingIn\\Screnshots\\SingIn.jpg");
+                screenshot.SaveAsFile("C:\\PitDevelop\\C#\\HW0\\HW0\\SingIn\\Screenshot\\SingIn.jpg");
             }
         }
     }
