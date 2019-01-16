@@ -138,7 +138,8 @@ namespace SingIn
                  Logout.Text.Equals("Sign out"))
             {
                 Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
-                screenshot.SaveAsFile("C:\\PitDevelop\\C#\\HW0\\SingIn\\Screnshots\\SingIn.jpg");
+                //Cambiar lugar de screenshots 
+                screenshot.SaveAsFile("C:\\PitDevelop\\C#\\HW0\\HW0\\SingIn\\Screnshots\\SingIn.jpg");
             }
         }
     }
