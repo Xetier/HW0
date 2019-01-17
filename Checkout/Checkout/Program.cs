@@ -77,6 +77,20 @@ namespace Checkout
             Console.WriteLine(btnConfirmOrder.Text);
             btnConfirmOrder.Click();
 
+
+
+            //Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
+            bool urlConfirm = _driver.Url.Contains("?controller=order-confirmation");
+
+            if (urlConfirm  )
+            {
+                Console.WriteLine("True");
+            }
+            else
+            {
+                Console.WriteLine("False");
+            }
+
         }
     }
 }
