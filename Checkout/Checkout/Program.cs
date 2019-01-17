@@ -69,22 +69,13 @@ namespace Checkout
             Console.WriteLine("Proceed to checkout 4");
             btnProceedToCheckout4.Click();
 
+            var btnBankWire = _driver.FindElement(By.ClassName("bankwire"));
+            Console.WriteLine(btnBankWire.Text);
+            btnBankWire.Click();
 
-
-
-            try
-            {
-
-                
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-
-            }
-            
-
+            var btnConfirmOrder = _driver.FindElement(By.XPath("//*[@id='cart_navigation']/button/span"));
+            Console.WriteLine(btnConfirmOrder.Text);
+            btnConfirmOrder.Click();
 
         }
     }
