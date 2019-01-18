@@ -27,7 +27,7 @@ namespace SingIn
 
             var txtEmailCreate = _driver.FindElement(By.Id("email_create"));
             txtEmailCreate.Clear();
-            txtEmailCreate.SendKeys("email123@mail.com");
+            txtEmailCreate.SendKeys("email1234@mail.com");
 
             var btnCreateAccount = _driver.FindElement(By.Id("SubmitCreate"));
             Console.WriteLine(btnCreateAccount.Text);
@@ -64,7 +64,7 @@ namespace SingIn
 
             var cbxBirthMonth = _driver.FindElement(By.Id("months"));
             var selectElementBirthMonth = new SelectElement(cbxBirthMonth);
-            selectElementBirthMonth.SelectByValue("7");
+            selectElementBirthMonth.SelectByText("July ");
             Console.WriteLine("Month: " + selectElementBirthMonth.SelectedOption.Text);
 
             var cbxBirthYear = _driver.FindElement(By.Id("years"));
