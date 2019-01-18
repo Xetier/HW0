@@ -79,16 +79,20 @@ namespace Checkout
 
 
 
-            //Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
-            bool urlConfirm = _driver.Url.Contains("?controller=order-confirmation");
+            Screenshot screenshot = ((ITakesScreenshot)_driver).GetScreenshot();
 
-            if (urlConfirm  )
+            bool urlConfirmation = _driver.Url.Contains("?controller=order-confirmation");
+            bool complete = _driver.FindElement(By.ClassName("cheque-indent")).Text.Contains("complete");
+            var color = _driver.FindElement(By.Id("step_end")).GetCssValue("background");
+            bool boolColor = color.ToString().Contains("rgb(67, 171, 84)");
+
+            if (urlConfirmation && complete && boolColor)
             {
-                Console.WriteLine("True");
+                screenshot.SaveAsFile("C:\\PitDevelop\\C#\\HW0\\HW0\\Checkout\\Sceenshot\\Checout.jpg");
             }
             else
             {
-                Console.WriteLine("False");
+                screenshot.SaveAsFile("C:\\PitDevelop\\C#\\HW0\\HW0\\Checkout\\Sceenshot\\FAILChecout.jpg");
             }
 
         }
