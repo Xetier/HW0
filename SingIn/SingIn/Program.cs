@@ -21,9 +21,9 @@ namespace SingIn
             _driver.Url = "http://automationpractice.com/index.php";
             _driver.Manage().Window.Maximize();
 
-            var btnSingIn = _driver.FindElement(By.ClassName("login"));
-            Console.WriteLine(btnSingIn.Text);
-            btnSingIn.Click();
+            var btnSignIn = _driver.FindElement(By.ClassName("login"));
+            Console.WriteLine(btnSignIn.Text);
+            btnSignIn.Click();
 
             var txtEmailCreate = _driver.FindElement(By.Id("email_create"));
             txtEmailCreate.Clear();
