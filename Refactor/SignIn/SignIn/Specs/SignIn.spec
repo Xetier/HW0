@@ -17,3 +17,4 @@ tags: signinscenario1
 * Pick day "7  " in birthday day combobox
 * Pick month "July " in birthday month combobox
 * Pick year "1955  " in birthday year combobox
+* Check Sign up for our newsletter! and Receive special offers from our partners!
