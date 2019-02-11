@@ -15,6 +15,7 @@ namespace SingIn
 {
     class Program
     {
+        public static readonly Random random = new Random();
         static void Main(string[] args)
         {
             IWebDriver _driver = new ChromeDriver();
@@ -27,7 +28,7 @@ namespace SingIn
 
             var txtEmailCreate = _driver.FindElement(By.Id("email_create"));
             txtEmailCreate.Clear();
-            txtEmailCreate.SendKeys("email1234@mail.com");
+            txtEmailCreate.SendKeys("email123456@mail.com");
 
             var btnCreateAccount = _driver.FindElement(By.Id("SubmitCreate"));
             Console.WriteLine(btnCreateAccount.Text);
@@ -35,7 +36,11 @@ namespace SingIn
 
             Thread.Sleep(TimeSpan.FromSeconds(5));
 
+
+            var id_gender = random.Next(1, 2);
             var rbtnTittle = _driver.FindElements(By.Name("id_gender"));
+
+            //var rbtnTittle = _driver.FindElements(By.Name("id_gender"));
             if (rbtnTittle[0].GetAttribute("value").Equals("1"))
             {
                 Console.WriteLine("Mr.");
@@ -44,7 +49,7 @@ namespace SingIn
             {
                 Console.WriteLine("Mrs.");
             }
-            rbtnTittle[0].Click();
+            rbtnTittle[id_gender].Click();
 
             var txtFirstName = _driver.FindElement(By.Id("customer_firstname"));
             txtFirstName.SendKeys("FirstName");
